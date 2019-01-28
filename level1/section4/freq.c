@@ -37,4 +37,6 @@ int main()
     printf("Number of 3's: %d\n", num_three);
     printf("Number of 4's: %d\n", num_four);
     printf("Number of others: %d\n", num_other);
+    
+    return 0; 
 }
