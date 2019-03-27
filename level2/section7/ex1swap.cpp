@@ -18,5 +18,7 @@ int main()
     printf("a is %f, b is %f\n", a, b);
     Swap(&a, &b);
     printf("Swap a,b, a is %f, b is %f\n", a, b);
+   
+    return 0;
 }
 

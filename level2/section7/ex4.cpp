@@ -48,4 +48,6 @@ int main()
     day_num = 1;
     DayName(day_num);
     DayName2(day_num);
+
+    return 0;
 }
