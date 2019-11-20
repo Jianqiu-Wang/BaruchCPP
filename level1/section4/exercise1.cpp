@@ -5,37 +5,42 @@ Use while loop */
 
 int main()
 {
-    int next_ch; // next charcter from input
-    int last_ch = '\n'; // last charcter, to test if there are consectutive spaces
+	int next_ch; // next charcter from input
+	int last_ch = '\n'; // last charcter, to test if there are consectutive spaces
+	int num_char = 0; // number of characters
+	int num_word = 0; // number of words
+	int num_line = 0; // number of lines
+	int num_space = 0;// number of spaces
     
-    int num_char = 0; // number of characters
-    int num_word = 0; // number of words
-    int num_line = 0; // number of lines
-    int num_space = 0;// number of spaces
-    
-    while ((next_ch=getchar()) != EOF)
-    {
-        num_char = num_char + 1;
+	while ((next_ch=getchar()) != EOF)
+	{
+		num_char = num_char + 1;
 
-        if (next_ch == '\n') 
-        {
-            num_line = num_line + 1;
-            /* if last char is not a space or next line, and next one is a space, count as a word */
-            if (last_ch != ' ' & last_ch != '\n')
-            {
-                num_word = num_word + 1;
-            }    
-        }
-        
-        if (next_ch == ' ')
-        {
-            num_space =  num_space + 1;    
-            /* if last char is a non-space and next one is a space, count as a word */
-            if (last_ch != ' ' & last_ch != '\n')
+		if (next_ch == '\n') 
+		{
+			num_line = num_line + 1;
+			/* if last char is not a space or next line, and next one is a space, count as a word */
+			if (last_ch != ' ' & last_ch != ' ')
+			{
+				num_word = num_word + 1;
+			}    
+		}
+		else if (next_ch == ' ' | next_ch == '\t')
+		{
+			/* if last char is a non-space and next one is a space, count as a word */
+            if (last_ch != ' ' & last_ch != '\n' & last_ch != '\t')
             {
                 num_word = num_word + 1;
             }        
+			if (next_ch == ' ')
+			{
+				num_space =  num_space + 1;    
+			}
         }
+		else if (last_ch == ' ')
+		{
+			num_word = num_word + 1;
+		}
         last_ch = next_ch;
     }
 
