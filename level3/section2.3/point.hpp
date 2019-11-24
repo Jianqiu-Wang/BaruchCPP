@@ -30,12 +30,23 @@ public:
 	// getter and setter
 	double X() const;       // get x coordinate
 	double Y() const;       // get y coordinate
-	void X(double newxval); // set the x value
-	void Y(double newyval); // set the y value
+	inline void X(double newxval) {m_x = newxval;}; // set the x value
+	inline void Y(double newyval) {m_y = newyval;}; // set the y value
 
 	// accessing functions
 	std::string ToString() const;    // return string description of point
 	double Distance() const;         // calculate distance to origin (0, 0)
 	double Distance(const Point& p) const;  // calculate distance between two points
 };
+
+// Normal inline for getters
+inline double Point::X() const
+{
+	return m_x;
+}
+
+inline double Point::Y() const
+{
+	return m_y;
+}
 #endif //POINT_HPP

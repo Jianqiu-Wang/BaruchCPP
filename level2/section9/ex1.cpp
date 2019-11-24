@@ -2,37 +2,27 @@
 //Read characters from keyboard and show on screen
 #include <stdio.h>
 #include <stdlib.h>
-#define MAXINPUT 80   // assume no more than 80 chars per line
-
+#define MAXINPUT 80
 int main()
 {
-	char* p;
-	p = (char*)malloc(MAXINPUT*sizeof(char)); // allocate memory for one line of input
-
-	int c;         // charactor to read
-	int count = 0; // number of chars used in one line
-	while (p != NULL)
+	int next_char; // charactor to read
+	int count = 0;
+	char line[MAXINPUT]; // number of chars used in one line
+	while ((next_char=getchar()) != 1)
 	{
-		c = getchar();
-		if (c == 1) // CTRL + A is 1 
+		if (next_char != '\n') 
 		{
-			printf("CTRL + A is a correct ending.\n");
-			break;
-		}
-		else if (c != '\n') 
-		{
-			p[count] = c;
+			line[count] = next_char;
 			count++;
 		}
 		else // line ends
 		{   
 			// print this line, reallocate meory, and reset counter
-			printf("%s\n", p);
-			p = (char*)malloc(MAXINPUT*sizeof(char));
+			printf("%s\n", line);
+			char line[MAXINPUT];
 			count = 0;
 		}
 	}
-
-	free(p);
+	printf("CTRL + A is a correct ending.\n");
 	return 0;
 }

@@ -11,17 +11,7 @@ char day_name[7][MAXLEN]= {"Monday\0", "Tuesday\0", "Wednesday\0",
 // Prints name of each day in a week
 void DayName(int day_num)
 {
-	printf("%d gives: Day %d is a ", day_num, day_num);
-	char day_str;
-	for(int i=0; i < MAXLEN; i++) 
-	{ 
-		day_str = day_name[day_num-1][i];
-		if (day_str!='\0')
-		{
-			printf("%c", day_name[day_num-1][i]);
-		} 
-	}
-	printf("\n");
+	printf("%d gives: Day %d is a %s\n", day_num, day_num, day_name[day_num-1]);
 }
 
 // Another implementation by using pointer

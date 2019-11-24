@@ -9,13 +9,13 @@
 // Constructor of class Point
 Point::Point()
 {
-	std::cout << "----Naive constructor called." << std::endl;
+	// std::cout << "----Naive constructor called." << std::endl;
 }
 
 // Copy constructor
 Point::Point(const Point& p)
 {
-	std::cout << "----COPY constructor called." << std::endl;
+	// std::cout << "----COPY constructor called." << std::endl;
 	m_x = p.m_x;
 	m_y = p.m_y;
 }
@@ -23,7 +23,7 @@ Point::Point(const Point& p)
 // Constructor giving coordinates x and y
 Point::Point(double x, double y)
 {
-	std::cout << "----Constructor given values" << std::endl;
+	// std::cout << "----Constructor given values" << std::endl;
 	m_x = x;
 	m_y = y;
 }
@@ -36,32 +36,20 @@ Point::~Point()
 	// When calling distance function:
 	// If call by value, a point was copied, implicitly called copy constructor once.
 	// If call by reference, no copy constructor will be called.
-	std::cout << "----Deconstructor called." << std::endl;
+	// std::cout << "----Deconstructor called." << std::endl;
 }
 
-// Get x coordinate of point
-double Point::X() const
-{
-	return m_x;
-}
+// // Set x coordinate of point 
+// void Point::X(double newxval)
+// {
+// 	m_x = newxval;
+// }
 
-// Get y coordinate of point
-double Point::Y() const
-{
-	return m_y;
-}
-
-// Set x coordinate of point 
-void Point::X(double newxval)
-{
-	m_x = newxval;
-}
-
-// Set y coordinate of point 
-void Point::Y(double newyval)
-{
-	m_y = newyval;
-}
+// // Set y coordinate of point 
+// void Point::Y(double newyval)
+// {
+// 	m_y = newyval;
+// }
 
 // Return a string format of (x, y) by using stringstream
 std::string Point::ToString() const

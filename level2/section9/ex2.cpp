@@ -7,7 +7,7 @@
 int main()
 {
 	printf("Type filename:");
-	char filename[80];
+	char filename[255];
 	scanf("%s\n", filename); // read file name 
 
 	// create a file handler
@@ -19,33 +19,13 @@ int main()
 		exit(1);
 	}
 
-	char* p; // dynamic array to buffer one line input
-	p = (char*)malloc(MAXINPUT*sizeof(char)); // allocate memory for one line of input
-
-	int c;         // char input
-	int count = 0; // char counter for one line
-	while (p != NULL)
+	int c; // char input
+	while ((c=getchar()) !=1)
 	{
-		c = getchar();
-		if (c == 1)
-		{
-			printf("CTRL + A is a correct ending.\n");
-			free(p);    // release array pointer
-			fclose(fp); // close file handler
-			break;
-		}
-		else // not ctrl+A
-		{
-			fprintf(fp, "%c", c); // write char to file including normal and \n
-			count++;
-			if (c == '\n') // line ends
-			{   
-				// reallocate memory and reset counter
-				p = (char*)malloc(MAXINPUT*sizeof(char));
-				count = 0;
-			}
-		}
+		fprintf(fp, "%c", c); // write char to file including normal and \n
 	}
-		
+	printf("CTRL + A is a correct ending.\n");
+	fclose(fp); // close file handler
+	
 	return 0;
 }
