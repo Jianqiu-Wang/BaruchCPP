@@ -32,13 +32,13 @@ Line::~Line()
 }
 
 // Get start point of line
-Point Line::Start() const
+const Point& Line::Start() const
 {
 	return start_point;
 }
 
 // Get end point of line
-Point Line::End() const
+const Point& Line::End() const
 {
 	return end_point;
 }

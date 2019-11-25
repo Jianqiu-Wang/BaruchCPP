@@ -14,6 +14,13 @@ int main()
 	std::cout << "Print line" << std::endl;
 	std::cout << l.ToString() << std::endl;
     std::cout << "Line length: " << l.Length() << std::endl;
+    
+    // get start point of Line l
+    std::cout << "Line l starts at: " << l.Start().ToString() << std::endl;
+    // try to modify returned result of l.Start()
+    Point p5;
+    p5 = l.Start();
+    p5.X(4); // it still works
     // update line start point and end point to p3, p4
     Point p3(-5, -10);
     Point p4(-10, -20);

@@ -18,8 +18,8 @@ public:
     ~Line();                   // deconstructor
 
 	// getter and setter
-	Point Start() const;         // get start point of line
-	Point End() const;           // get end point of line
+	const Point& Start() const;  // get start point of line
+	const Point& End() const;    // get end point of line
 	void Start(const Point& p1); // set start point
 	void End(const Point& p2);   // set end point
 
