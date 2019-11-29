@@ -23,5 +23,6 @@ public:
 	Point& GetElement(int index) const; 		// get element at index 
 	Point& operator [] (int index); 			// override operator [] 
 	const Point& operator [] (int index) const; // override operator [] with const, read only
+	Array& operator= (const Array& source);     // assignment operator
 };
 #endif // ARRAY_HPP

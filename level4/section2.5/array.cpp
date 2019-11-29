@@ -28,7 +28,6 @@ Array::Array(int size)
 // Copy constructor
 Array::Array(const Array& arr)
 {
-	delete[] m_data;
 	m_data = new Point[arr.m_size]; // allocate new array
 	for (int i=0; i < arr.m_size; i++)
 	{
@@ -52,13 +51,17 @@ int Array::Size() const
 // Set element at index idx
 void Array::SetElement(int index, const Point& p)
 {
-	m_data[index] = p;
+	if (index >= 0 && index < m_size)
+	{
+		m_data[index] = p;
+	}
+	
 }
 
 // Get element at index
 Point& Array::GetElement(int index) const
 {
-	if (index >= m_size)
+	if (index >= m_size || index < 0)
 		return m_data[0];
 	else
 		return m_data[index]; 
@@ -67,7 +70,7 @@ Point& Array::GetElement(int index) const
 // Override operator []
 Point& Array::operator [] (int index)
 {
-	if (index >= m_size)
+	if (index >= m_size || index < 0)
 		return m_data[0];
 	else
 		return m_data[index]; 
@@ -76,8 +79,24 @@ Point& Array::operator [] (int index)
 // read only const [] operator
 const Point& Array::operator [] (int index) const
 {
-	if (index >= m_size)
+	if (index >= m_size || index < 0)
 		return m_data[0];
 	else
 		return m_data[index];
+}
+
+// assigmnment operator
+Array& Array::operator= (const Array& source)
+{
+	if (this == &source) // assign to myself
+		return *this;
+
+	delete[] m_data;
+	m_data = new Point[source.m_size];
+	m_size = source.m_size;
+	for (int i=0; i < m_size; i++)
+	{
+		m_data[i] = source.m_data[i]; // copy each element
+    }
+	return *this;
 }

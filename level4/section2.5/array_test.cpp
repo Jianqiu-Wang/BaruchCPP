@@ -35,5 +35,13 @@ int main()
     std::cout << arr4[0] << std::endl;
     // this assignment will fail because arr4 is a const Array
     // arr4[1] = Point(2,2);
+
+    // test assignment
+    std::cout << "assign arr3 to arr1" << std::endl;
+    arr1 = arr3;
+    for (int i = 0; i < arr1.Size() ; i++)
+    {
+        std::cout << arr1[i] << std::endl;
+    }
     return 0;
 }

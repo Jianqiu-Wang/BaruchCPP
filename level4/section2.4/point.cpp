@@ -104,14 +104,7 @@ Point Point::operator + (const Point& p) const
 // Equally compare operator. 
 bool Point::operator == (const Point& p) const
 {
-	if (m_x == p.m_x & m_y == p.m_y)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return (m_x == p.m_x && m_y == p.m_y);
 }
 
 // Assignment operator.
@@ -127,11 +120,10 @@ Point& Point::operator = (const Point& source)
 }
 
 // Scale the coordinates & assign
-Point& Point::operator *= (double factor)
+Point& Point::operator*= (double factor)
 {
-	Point temp = (*this) * factor; // call operator *
-	*this = temp;
-	
+	m_x = m_x * factor;
+	m_y = m_y * factor;
 	return *this;
 }
 

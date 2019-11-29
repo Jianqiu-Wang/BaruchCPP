@@ -25,7 +25,7 @@ public:
 	Point();
 	Point(const Point& p);      // copy constructor
 	Point(double x, double y);  // construct from coordinates directly
-	explicit Point(double xy);           // construct from same x- and y- coordinates
+	explicit Point(double xy);  // construct from same x- and y- coordinates
 	~Point();
 
 	// getter and setter
@@ -48,8 +48,7 @@ public:
 	Point& operator *= (double factor);      // scale the coordinates & assign
 
 	// operator overloading
-	friend std::ostream& operator << (std::ostream& os, const Point& pt);
-	
+	friend std::ostream& operator << (std::ostream& os, const Point& pt);	
 };
 
 #endif //POINT_HPP
