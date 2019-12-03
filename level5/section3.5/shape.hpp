@@ -29,7 +29,7 @@ public:
 	int ID() const;				  // get id
 
 	virtual void Draw() const = 0; // every derived shape should implement this
-	void Print();            // make polymorphic
+	void Print() const;            // make polymorphic
 
 	// overload operator =
 	Shape& operator= (const Shape& other);

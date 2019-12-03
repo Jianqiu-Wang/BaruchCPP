@@ -26,7 +26,9 @@ private:
 
 public:
 	// constructor and destructor
-	OutOfBoundsException(): m_index(-1) {}; // defualt inline, default constructor
+	OutOfBoundsException(): ArrayException() {
+		m_index = -1;
+	};
 	OutOfBoundsException(int err_index): m_index(err_index) {};; // default inline, constructor
 	~OutOfBoundsException() {};
 
