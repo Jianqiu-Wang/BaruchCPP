@@ -5,10 +5,10 @@
 
 using namespace DeanWang::Containers;
 
-// namespace DeanWang
-// {
-// namespace Containers
-// {
+namespace DeanWang
+{
+namespace Containers
+{
 
 // Default constructor: allocate 10 T objects into memory
 template <typename T>
@@ -138,5 +138,5 @@ Array<T>& Array<T>::operator= (const Array<T>& source)
     }
 	return *this;
 }
-// } // namespace Containers
-// } // namespace DeanWang
+} // namespace Containers
+} // namespace DeanWang

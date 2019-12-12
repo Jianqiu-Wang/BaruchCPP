@@ -62,15 +62,12 @@ void Stack<T>::Push(const T& element)
 template <typename T>
 const T& Stack<T>::Pop()
 {
-	if (m_current <= 0) // wont substract index
-	{
-		return m_array[m_current-1];
-	}
-	else
-	{
-		m_current = m_current - 1;
-		return m_array[m_current];
-	}
+	// if OutOfBoundsException throws when accessing m_array[m_curent-1]
+	// then m_current-- will not be executed, 
+	// hence we can always keep m_current>=0 without try... catch .. or if ... else ...
+	m_array[m_current-1];
+	m_current--;
+	return m_array[m_current]; 
 }
 
 } // namespace Containers

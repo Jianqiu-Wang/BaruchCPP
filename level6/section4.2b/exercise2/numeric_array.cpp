@@ -26,7 +26,7 @@ NumericArray<T>::NumericArray(int size): Array<T>(size)
 
 // Copy constructor
 template <typename T>
-NumericArray<T>::NumericArray(const NumericArray<T>& source): Array<T>(source), m_data(source.m_data), m_size(source.m_size)
+NumericArray<T>::NumericArray(const NumericArray<T>& source): Array<T>(source)
 {
 }
 
