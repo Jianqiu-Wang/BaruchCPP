@@ -12,7 +12,7 @@ namespace DeanWang
 namespace CAD
 {
 // Constructor of class Point
-Point::Point(): Shape()
+Point::Point(): Shape(), m_x(0), m_y(0)
 {
 }
 

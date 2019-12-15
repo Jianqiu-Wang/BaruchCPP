@@ -34,7 +34,7 @@ int Shape::ID() const
 	return id;
 }
 
-void Shape::Print()
+void Shape::Print() const
 {
 	std::cout << ToString() << std::endl;
 }
