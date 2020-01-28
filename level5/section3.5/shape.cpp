@@ -48,5 +48,6 @@ Shape& Shape::operator=(const Shape& other)
 	id = other.id;
 	return *this;
 }
+
 } // namespace CAD
 } // namespace DeanWang

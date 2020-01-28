@@ -1,4 +1,4 @@
-// array.cpp
+// array.hpp
 // Author: Jianqiu Wang
 // Templated array class
 

@@ -91,6 +91,7 @@ void Point::Draw() const
 {
 	std::cout << "Draw point" << std::endl;
 }
+
 // Negate the coordinates
 Point Point::operator- () const
 {
